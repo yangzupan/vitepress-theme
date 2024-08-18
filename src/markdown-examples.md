@@ -2,26 +2,33 @@
 title: Markdown 演示
 isOriginal: false
 author: 攀哥
-authorLink: https://vitepress.dev/
+# authorLink: https://vitepress.dev/
 date: 2020-10-01 10:24
 permalink: /posts/cd49a3
-
 ---
 
 # {{ $frontmatter.title }}
 
 ## 标题二
+
 sdf
 
 ### 标题三
+
 sdf
+
 #### 标题四
+
 asdf
+
 ##### 标题五
+
 afasdf
+
 ###### 标题六
 
 ## 文字
+
 这句话里拥有**加粗**、*倾斜*和~~删除~~
 
 ## 段落
@@ -33,6 +40,7 @@ afasdf
 ## 列表
 
 ### 无序列表
+
 - 无序列表项
 - 无序列表项
 
@@ -47,11 +55,12 @@ afasdf
 - 无序列表项
 
 ### 有序列表
+
 1. 有序列表第一项
 1. 有序列表第二项
-    1. 第一项  
-    2. 第二项
-        1. 第一项
+   1. 第一项
+   2. 第二项
+      1. 第一项
 1. 有序列表第三项
 
 ## 分割线
@@ -66,15 +75,13 @@ afasdf
 
 ## 链接
 
+这是一个链接[百度](https://www.baidu.com)。
 
 ## 图片
-
 
 ## 代码块
 
 行内代码效果: `code`
-
-
 
 块级代码
 
@@ -97,10 +104,11 @@ console.log(foo(5));
 |     居中      |         右对齐 | 左对齐         |
 | :-----------: | -------------: | :------------- |
 | 居中使用`:-:` | 右对齐使用`-:` | 左对齐使用`:-` |
-|       b       |      aaaaaaaaa | aaaa           |
+|       b       |      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | aaaa           |
 |       c       |           aaaa | a              |
 
 ## Emoji
+
 经典方式:
 
 :wink: :cry: :laughing: :yum:
@@ -128,9 +136,8 @@ Title <Badge type="danger" text="caution" />
 ## 脚注
 
 ::: tip
-脚注是基于 `markdown-it-footnote` 实现的
+脚注是基于`markdown-it-footnote`实现的
 :::
-
 
 ### 输入
 
@@ -150,7 +157,6 @@ Title <Badge type="danger" text="caution" />
 [^second]: 脚注文字。
 ```
 
-
 ### 输出
 
 脚注 1 链接[^first]。
@@ -167,7 +173,6 @@ Title <Badge type="danger" text="caution" />
 
 [^second]: 脚注文字。
 
-
 ## 公式
 
 | 角度 |              正弦(sin)               |              余弦(cos)               |              正切(tan)               |
@@ -183,8 +188,8 @@ Title <Badge type="danger" text="caution" />
 ### 默认容器
 
 #### 默认样式
-**输入**
 
+**输入**
 
 ```md
 ::: info
@@ -214,7 +219,6 @@ This is a dangerous warning.
 ::: details
 This is a details block.
 :::
-
 ```
 
 **输出**
@@ -281,13 +285,14 @@ This is a details block.
 
 #### 卡片
 
-::: card  title="卡片标题" bgColor= "info" >
+::: card title="卡片标题" bgColor= "info" >
 
 :::
 
 #### 选项卡
 
 ## GitHub 风格的警报
+
 > [!NOTE]
 > 强调用户在快速浏览文档时也不应忽略的重要信息。
 
@@ -305,7 +310,7 @@ This is a details block.
 
 ## 组件
 
-### 
+###
 
 ### 卡片
 
@@ -319,19 +324,21 @@ This is a details block.
 
 ### 链接卡片
 
-  <LinkCard url="/"  />
-  <LinkCard url="www.yangzupan.com/404.html" type= "tip" />
-  <LinkCard  url="https://blog.imsyy.top/"  />
-  <LinkCard  url="https://vitepress.dev" />
-  <LinkCard   title="链接卡片" desc="这是描述" /> 
-  <LinkCard  url="https://www.yangzupan.com" />
-  <LinkCard  url="https://hexo.io/zh-cn/docs/tag-plugins" />
-  <LinkCard  url="https://www.yangzupan.com" type= "info" />
-  <LinkCard  url="https://mp.weixin.qq.com/" />
-
+  <LinkCard url="/" title="这是标题" desc="这是描述" />
+  <LinkCard url="/about/" icon="https://cdn.yangzupan.com/images/home/avatar.webp!default"/>
+  <LinkCard url="https://www.yangzupan.com/404.html"  type= "tip" />
+  <LinkCard url="https://blog.imsyy.top/"  icon=''/>
+  <LinkCard url="https://vitepress.dev" />
+  <LinkCard desc="这是描述" /> 
+  <LinkCard url="https://www.yangzupan.com" />
+  <LinkCard url="https://hexo.io/zh-cn/docs/tag-plugins" />
+  <LinkCard url="https://www.yangzupan.com" type= "info" />
+  <LinkCard url="https://mp.weixin.qq.com/" />
 
 ### 卡片容器
+
 #### 不带标题
+
 <CardGrid>
 
   <Card >
@@ -343,10 +350,10 @@ This is a details block.
 <LinkCard  url="https://www.yangzupan.com"  title="链接卡片" />
 <LinkCard  url="https://blog.imsyy.top/posts/2024/0307" title="链接卡片" />
 
-
 </CardGrid>
 
 #### 带标题
+
 <CardGrid>
   <Card title="卡片标题">
     这里是卡片内容。
@@ -358,18 +365,18 @@ This is a details block.
   <LinkCard  url="https://www.yangzupan.com" title="链接卡片" />
 </CardGrid>
 
+## 遮罩
 
-## 遮罩 
 ### 组件
+
 - 鼠标悬停 - <Plot>悬停时可见</Plot>
-- 点击 - <Plot trigger="click" mask= "#dc2626">点击时可见</Plot>
+- 点击 - <Plot trigger="click">点击时可见</Plot>
+
+### 例子
 
 
-### 容器
-!!需要隐秘的内容!!
-
-你知道吗， !!鲁迅!! 曾说过：“ !!我没说过这句话！!! ” 令我醍醐灌顶，深受启发，浑身迸发出无可匹敌的
-力量！于是，!!我在床上翻了个身!! ！
+你知道吗， <plot>鲁迅</plot> 曾说过：“ <plot>我没说过这句话！</plot> ” 令我醍醐灌顶，深受启发，浑身迸发出无可匹敌的
+力量！于是，<plot>我在床上翻了个身</plot> 。
 
 ## More
 
@@ -380,17 +387,15 @@ Check out the documentation for the [full list of markdown extensions](https://v
 :tada: :100:
 [所有支持的 emoji 列表](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.mjs)
 
-
 vuepress-theme-plume 是一个 ==简洁美观== 的 主题
-
 
 - 19^th^
 - H~2~O
 
-
 - [ ] 任务 1
 - [x] 任务 2
 - [ ] 任务 3
+
 ## 公式
 
 When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
@@ -403,9 +408,6 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 | $\nabla \cdot \vec{\mathbf{B}}  = 0$                                                                                                                                      | divergence of $\vec{\mathbf{B}}$ is zero                                               |
 | $\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t}  = \vec{\mathbf{0}}$                                                          | curl of $\vec{\mathbf{E}}$ is proportional to the rate of change of $\vec{\mathbf{B}}$ |
 | $\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} = \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} = 4 \pi \rho$ | _wha?_                                                                                 |
-
-
-
 
 ## 脚注
 
@@ -423,30 +425,35 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 [^second]: 脚注文字。
 
-
 ::: card title="卡片标题<dev /sd>" type="tip"
 
 时代俊峰的减肥拉时间到了发
 :::
 
-::: card  title="卡片标题" type="warning"
+::: card title="卡片标题" type="warning"
 这是一个卡片的内容。
 :::
-
 
 ::: card title="卡片标题" type="info"
 这是一个卡片的内容。
 :::
 
 ## 标题二
+
 sdf
 
 ### 标题三
+
 sdf
+
 #### 标题四
+
 asdf
+
 ##### 标题五
+
 afasdf
+
 ##### 标题六
 
 ## 时间线
@@ -456,21 +463,18 @@ afasdf
 - 一个非常棒的开源项目 H5-Dooring 目前 star 3.1k
   - 开源地址 https://github.com/MrXujiang/h5-Dooring
   - 基本介绍 http://h5.dooring.cn/doc/zh/guide/
-- 《深入浅出webpack》 http://webpack.wuhaolin.cn/
-:::
+- 《深入浅出 webpack》 http://webpack.wuhaolin.cn/
+  :::
 
 ::: timeline date="2023-04-23" title="这是标题"
 上岛咖啡
 
 :::
 
-::: timeline date:2 title:这是标题2345
+::: timeline date:2 title:这是标题 2345
 时代俊峰老师的减肥拉时间到了发
 
 :::
-
-
-
 
 <timeLine title= "标题" date = "2023-04-24">
 
@@ -501,21 +505,19 @@ This is a details block.
 
 </timeline>
 
-
-::: card title="卡片标题" 
-sdf 
+::: card title="卡片标题"
+sdf
 asdjlajsdla s
 :::
-
 
 <CardGrid>
 
-::: card title="卡片标题" 
-sdf 
+::: card title="卡片标题"
+sdf
 asdjlajsdla s
 :::
-::: card title="卡片标题" 
-sdf 
+::: card title="卡片标题"
+sdf
 asdjlajsdla s
 :::
 ::: linkcard url="https://www.yangzupan.com" title="链接卡片" desc="这是描述"
@@ -524,19 +526,23 @@ asdjlajsdla s
 :::
 </CardGrid>
 
-
 ::: linkcard url="https://www.yangzupan.com" title="链接卡片" desc="这是描述"
 :::
 
-
-
 ## 标题二
+
 sdf
 
 ### 标题三
+
 sdf
+
 #### 标题四
+
 asdf
+
 ##### 标题五
+
 afasdf
+
 ###### 标题六

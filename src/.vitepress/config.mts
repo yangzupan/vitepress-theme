@@ -1,38 +1,35 @@
-import { defineConfig } from 'vitepress'
-import { themeConfig } from './config/theme';
-import { head } from './config/head';
-import { markdown } from './config/markdown';
+import { defineConfig } from 'vitepress';
+import { fileURLToPath, URL } from 'node:url'
+import { head } from './config/head.ts';
+import { markdown } from './config/markdown.ts';
+import { themeConfig } from './config/theme.ts';
+import { jumpRedirect } from './theme/utils/jumpRedirect'; // 引入处理函数
 
-// https://vitepress.dev/reference/site-config
+// https://vitepress.dev/zh/reference/site-config
+
 export default defineConfig({
-  // 标题
+  lang: "zh-CN",
   title: "标题",
-  // 标题模板
   titleTemplate: ':title - 标题后缀',
-  // 站点的描述
-  description: "这是描述",
-  //head配置
+  description: "网址描述",
   head,
-  // 站点的 lang 属性
-  lang: 'zh-CN',
-  // 站点基本URL
   base: '/',
-
-  // 主题模式
-  // appearance:true,
-
-  // 最后更新
-  lastUpdated: true,
-
-  // markdown配置
   markdown,
-
-  // 站点地图
-  sitemap: {
-    hostname: '/'
+  lastUpdated: true,
+  themeConfig: themeConfig,
+  ignoreDeadLinks: true,
+  // 重写内部组件
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPFooter\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/Footer.vue', import.meta.url)
+          )
+        }
+      ]
+    }
   },
-
-  // 主题配置
-  themeConfig, 
-
+  
 })

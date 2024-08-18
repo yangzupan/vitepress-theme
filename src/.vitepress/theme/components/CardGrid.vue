@@ -1,4 +1,5 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <div class="vp-card-grid ">
@@ -18,13 +19,5 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-/* .vp-card-grid > * {
-  margin: 0 !important;
-} */
 
-/* @media (min-width: 768px) {
-  .vp-card-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-} */
 </style>

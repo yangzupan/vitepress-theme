@@ -77,7 +77,4 @@ const { isEnable } = toRefs(data);
   color: var(--vp-c-text-1);
   transition: color var(--t-color);
 }
-.vp-card .body p {
-  /* margin: 0 !important; */
-}
 </style>

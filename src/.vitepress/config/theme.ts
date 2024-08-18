@@ -1,53 +1,40 @@
 import type { DefaultTheme } from 'vitepress';
-import { nav } from './nav';
-import { generateSidebar } from 'vitepress-sidebar';
-import { sidebar } from './sidebar';
+import { nav } from './nav.ts';
+import { sidebar } from './sidebar.ts';
 
+// https://vitepress.dev/zh/reference/default-theme-config
 
-const vitepressSidebarOptions = {
-    /* Options... */
-    documentRootPath: "src",
-
-};
 export const themeConfig: DefaultTheme.Config = {
-    // https://vitepress.dev/reference/default-theme-config
-
-    // logo
     // logo: '/logo.svg',
-
-    // 站点标题
     siteTitle: "站点标题",
-
-    // 导航栏配置
     nav,
-
-    // 侧边栏配置
-    // sidebar,
-    sidebar: generateSidebar(vitepressSidebarOptions),
-
-    // 侧边目录层级
+    sidebar,
     outline: {
+        // deep = [2, 6]
         level: 'deep',
         label: "目录",
     },
-
-    // 社交链接
     socialLinks: [
         { icon: 'github', link: 'https://github.com/yangzupan/vitepress-theme-pange' }
     ],
 
-    // 页脚
-    // footer: {
-    //     // message: 'Released under the MIT License.',
-    //     copyright: 'Copyright © 2021 - 2024 <a href="https://www.yangzupan.com/" target="blank"> 杨祖攀 </a> All Rights Reserved.'
-    // },
-    // 编辑链接
-    // editLink: {
-    //   pattern: 'https://github.com/yangzupan/wiki/edit/main/src/:path',
-    //   text: '编辑此页面'
-    // },
+    footer: {
+        // @ts-ignore
+        // 是否显示页脚
+        showFooter: true,
+        // 现实版权信息
+        showCopyright: true,
+        author: '攀哥',
+        // authorLink: '',
+        // 建站日期
+        startYears: 2023,
+        // showRecord: false,
+        // ICP备案号
+        icpRecordCode: '滇ICP备2021000000号',
+        // 公安联网备案号
+        publicSecurityRecordCode: '滇公网安备 5303810000000 号',
+    },
 
-    // 最近更新
     lastUpdated: {
         text: '最后更新于',
         formatOptions: {
@@ -55,7 +42,6 @@ export const themeConfig: DefaultTheme.Config = {
             timeStyle: 'medium'
         }
     },
-    // 文档页脚导航
     docFooter: {
         prev: '上一页',
         next: '下一页'
@@ -65,9 +51,6 @@ export const themeConfig: DefaultTheme.Config = {
     returnToTopLabel: "返回顶部",
     lightModeSwitchTitle: "切换到白色主题",
     darkModeSwitchTitle: "切换到黑暗主题",
-    // 外链图标
-    // externalLinkIcon: true,
-    // 搜索配置
     search: {
         provider: 'local',
         options: {
@@ -75,8 +58,8 @@ export const themeConfig: DefaultTheme.Config = {
                 root: {
                     translations: {
                         button: {
-                            buttonText: '搜索文档',
-                            buttonAriaLabel: '搜索文档'
+                            buttonText: '搜一搜',
+                            buttonAriaLabel: '搜一搜'
                         },
                         modal: {
                             noResultsText: '无法找到相关结果',
@@ -92,7 +75,6 @@ export const themeConfig: DefaultTheme.Config = {
             }
         }
     },
-    // 404页面配置
     notFound: {
         title: "很抱歉，您访问的页面不存在！",
         quote: "请仔细检查您输入的网址是否正确。",
@@ -101,6 +83,11 @@ export const themeConfig: DefaultTheme.Config = {
 
     // 自定义扩展: 文章元数据配置
     // @ts-ignore
+
+    jumpRedirect:{
+        enable:true,
+    },
+
     articleMetadataConfig: {
         isEnable: true,
         author: '攀哥', // 文章全局默认作者名称
@@ -118,10 +105,12 @@ export const themeConfig: DefaultTheme.Config = {
         // 是否显示卡片容器
         isEnable: true,
 
-        defaultTitle:"链接卡片"
+        // defaultTitle: "链接卡片",
+
+        // isShowTip: true,
 
         // defaultIcon: 'https://www.yangzupan.com/favicon.ico',
-     
+
     },
 
     // 自定义扩展: 文章版权配置
@@ -138,15 +127,15 @@ export const themeConfig: DefaultTheme.Config = {
         // 现实版权信息
         showCopyright: true,
         author: '攀哥',
-        // authorLink: '',
+        authorLink: '',
         // 建站日期
         StartYears: 2023,
         // showRecord: false,
         // ICP备案号
         icpRecordCode: '滇ICP备2021000000号',
         // 公安联网备案号
-        publicSecurityRecordCode: '滇公网安备 5303810000000 号',
-    }
+        publicSecurityRecordCode: '滇公网安备5303810000000号',
 
-    // 自定义配置：
+        
+    }
 }

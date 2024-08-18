@@ -19,27 +19,27 @@ const { isEnable, title, date } = toRefs(data);
 </script>
 
 <template>
-  <div class="timeline-dot">
+  <div class="vp-timeline">
     <slot name="header">
-      <div class="timeline-dot-header">
-        <div v-if="date" class="timeline-dot-date" v-html="date" />
-        <div v-if="title" class="timeline-dot-title" v-html="title" />
+      <div class="vp-timeline-header">
+        <div v-if="date" class="vp-timeline-date" v-html="date" />
+        <div v-if="title" class="vp-timeline-title" v-html="title" />
       </div>
     </slot>
-    <div class="timeline-dot-body">
+    <div class="vp-timeline-body">
       <slot />
     </div>
   </div>
 </template>
 
 <style scoped>
-.timeline-dot {
+.vp-timeline {
   position: relative;
   padding: 0 0 18px 24px;
   color: var(--vp-c-text-1);
   box-sizing: border-box;
 }
-.timeline-dot::before {
+.vp-timeline::before {
   position: absolute;
   left: 0;
   top: 0;
@@ -50,7 +50,7 @@ const { isEnable, title, date } = toRefs(data);
   border: solid 2px var(--vp-c-brand);
   transform: translate(0, 18%);
 }
-.timeline-dot::after {
+.vp-timeline::after {
   position: absolute;
   left: 7px;
   top: 19px;
@@ -60,7 +60,7 @@ const { isEnable, title, date } = toRefs(data);
   background-color: var(--vp-c-divider)
 }
 
-.timeline-dot-title {
+.vp-timeline-title {
   color: var(--vp-c-text-2);
   font-size: 1rem;
   font-weight: bold;
@@ -68,11 +68,11 @@ const { isEnable, title, date } = toRefs(data);
   padding-top: 0.75rem;
 
 }
-.timeline-dot-date{
+.vp-timeline-date{
   font-size: 0.875rem;
   color: var(--vp-c-text-2);
 }
-.timeline-dot-body {
+.vp-timeline-body {
   color: var(--vp-c-text-2);
 }
 </style>

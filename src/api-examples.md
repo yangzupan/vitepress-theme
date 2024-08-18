@@ -1,14 +1,5 @@
 ---
-title: 开发环境搭建
-author: 查尔斯
-date: 2020/10/02 21:29
-categories:
- - Java基础快速入门
-tags:
- - Java
- - Java基础
- - JDK
- - 开发环境
+outline: deep
 ---
 
 # Runtime API Examples
@@ -27,9 +18,7 @@ const { theme, page, frontmatter } = useData()
 ## Results
 
 ### Theme Data
-
 <pre>{{ theme }}</pre>
-
 
 ### Page Data
 <pre>{{ page }}</pre>
@@ -47,17 +36,12 @@ const { site, theme, page, frontmatter } = useData()
 ## Results
 
 ### Theme Data
-
-<div class= "language-json vp-adaptive-theme">
-<button title="Copy Code" class="copy"></button>
 <pre>{{ theme }}</pre>
-</div>
 
 ### Page Data
 <pre>{{ page }}</pre>
 
 ### Page Frontmatter
-code
 <pre>{{ frontmatter }}</pre>
 
 ## More

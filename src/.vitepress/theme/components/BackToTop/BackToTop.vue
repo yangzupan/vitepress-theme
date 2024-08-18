@@ -2,14 +2,9 @@
 import { computed, onMounted, ref } from "vue";
 
 // 定义组件属性及其默认值
-const props = withDefaults(
-  defineProps<{
+const props = defineProps<{
     threshold: number;
-  }>(),
-  {
-    threshold: 300,
-  }
-);
+  }>();
 
 // 定义滚动距离变量，初始值为0
 const scrollTop = ref(0);

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, ref, shallowRef, withDefaults } from "vue";
-// import { onClickOutside, useMediaQuery } from "@vueuse/core";
 
 
 type Props = {
@@ -58,10 +57,6 @@ const isMobile = window.matchMedia("(max-width: 768px)");
 const active = ref(false);
 const el = shallowRef<HTMLElement>();
 
-// onClickOutside(el, () => {
-//   if (options.value.trigger === "click" || isMobile.matches) active.value = false;
-// });
-
 function onClick() {
   if (props.trigger === "click" || isMobile.matches) active.value = !active.value;
 }
@@ -81,26 +76,25 @@ function onClick() {
 
 <style>
 .vp-plot {
-  /* padding-right: 2px;
-  padding-left: 2px; */
   padding: 1px 8px;
+  margin: 0 0.25rem;
   color: transparent;
-  background-color: var(--vp-c-bg-plot-light, var(--vp-c-text-2));
+  background-color: var(--vp-c-bg-plot-light, var(--vp-c-text-3));
   transition: color ease 0.25s, background-color ease 0.25s;
   cursor:pointer;
 }
 
 .dark .vp-plot {
-  background-color: var(--vp-c-bg-plot-dark, var(--vp-c-text-1));
+  background-color: var(--vp-c-bg-plot-dark, var(--vp-c-text-3));
 }
 
 .vp-plot.hover:hover,
 .vp-plot.active {
-  color: var(--vp-c-plot-light, #fff);
+  color: var(--vp-c-plot-light, var(--vp-c-white));
 }
 
 .dark .vp-plot.hover:hover,
 .dark .vp-plot.active {
-  color: var(--vp-c-plot-dark, #000);
+  color: var(--vp-c-plot-dark, var(--vp-c-black));
 }
 </style>

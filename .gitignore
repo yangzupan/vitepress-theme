@@ -1,3 +1,2 @@
-node_modules/
-src/.vitpress/.cache/
-src/.vitpress/.temp/
+node_modules
+src/.vitepress/cache

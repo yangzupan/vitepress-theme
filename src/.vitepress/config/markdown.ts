@@ -1,10 +1,5 @@
 import type { MarkdownOptions } from 'vitepress';
 import container from "markdown-it-container";
-import footnote from 'markdown-it-footnote';
-import mathjax3 from 'markdown-it-mathjax3';
-import sub from 'markdown-it-sub';
-import sup from 'markdown-it-sup';
-import todo from 'markdown-it-task-checkbox';
 export const markdown: MarkdownOptions = {
   // 代码高亮主题
   // Shiki主题, 所有主题参见: https://github.com/shikijs/shiki/blob/main/docs/themes.md
@@ -13,7 +8,6 @@ export const markdown: MarkdownOptions = {
     light: 'github-light',
     dark: 'github-dark'
   },
-  // 容器
   container: {
     infoLabel: '信息',
     tipLabel: '提示',
@@ -21,30 +15,26 @@ export const markdown: MarkdownOptions = {
     dangerLabel: '警告',
     detailsLabel: '详情',
   },
-
-  // 代码启用行号
   // lineNumbers: true,
 
   // 图片懒加载
   image: {
     lazyLoading: true
   },
-
-
   // 使用更多的 Markdown-it 插件！
   config: (md) => {
 
     // 脚注
-    md.use(footnote);
+    // md.use(footnote);
     // 数学公式
-    md.use(mathjax3);
+    // md.use(mathjax3);
 
     // 下角标
-    md.use(sub);
+    // md.use(sub);
     // 上角标
-    md.use(sup);
+    // md.use(sup);
     // 任务列表
-    md.use(todo);
+    // md.use(todo);
 
     // note 容器 
     md.use(container, 'note', {
@@ -96,20 +86,7 @@ export const markdown: MarkdownOptions = {
         }
         return '</LinkCard>';
       },
-      // marker: '::::',
     });
-    // 卡片网格容器
-    md.use(container, 'cardgrid', {
-      marker: '::::',
-      render: (tokens, idx) => {
-        const token = tokens[idx];
-        if (token.nesting === 1) {
-          return `<CardGrid>`;
-        }
-        return '</CardGrid>';
-      },
-    });
-
     // 时间轴
     md.use(container, 'timeline', {
       render: (tokens, idx) => {
@@ -124,8 +101,6 @@ export const markdown: MarkdownOptions = {
         return '</TimeLine>';
       },
     });
-
-
 
     // 在所有文档的<h1>标签后添加<ArticleMetadata/>组件
     md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
